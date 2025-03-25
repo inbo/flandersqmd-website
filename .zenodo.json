@@ -1,0 +1,36 @@
+{
+  "access_right": "open",
+  "title": "Quarto extension providing the corporate identity of the Flemish government for websites",
+  "description": "<p>This quarto extension builds on the quarto <a href=\"https://quarto.org/docs/websites/\">website format<\/a> and provides the corporate identity of the Flemish government for website. A full example is available in the <code>source<\/code> folder in the <a href=\"https://github.com/inbo/flandersqmd-website/\">GitHub repo<\/a>. Visit https://inbo.github.io/flandersqmd-website/ to view the rendered version of the example.<\/p>",
+  "keywords": [
+    "quarto",
+    "corporate identity"
+  ],
+  "upload_type": "software",
+  "license": "CC-BY-4.0",
+  "language": "eng",
+  "contributors": [
+    {
+      "name": "Onkelinx, Thierry",
+      "affiliation": "Research Institute for Nature and Forest (INBO)",
+      "orcid": "0000-0001-8804-4216",
+      "type": "contactperson"
+    },
+    {
+      "name": "Research Institute for Nature and Forest (INBO)",
+      "type": "rightsholder"
+    }
+  ],
+  "creators": [
+    {
+      "name": "Onkelinx, Thierry",
+      "affiliation": "Research Institute for Nature and Forest (INBO)",
+      "orcid": "0000-0001-8804-4216"
+    }
+  ],
+  "communities": [
+    {
+      "identifier": "inbo"
+    }
+  ]
+}
