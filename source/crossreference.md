@@ -19,8 +19,6 @@ You can use a link to a [section](static-figure.html#sec-static-figure.html) in 
 | table      | @tbl-static-align   |
 | equation   | @eq-som             |
 
-@fig-static-1b
-
 ### Custom internal references
 
 You can display only the number of the internal reference or replace the custom name with a custom name.
