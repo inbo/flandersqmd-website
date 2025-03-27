@@ -400,7 +400,7 @@ return {
       z = z .. '<div>' .. '<div class="quarto-title-meta-heading">' ..
         meta.translation.coverdescription .. '</div>'
       if is_empty(meta.flandersqmd.coverdescription) then
-        z = z .. '<h1 class="missing">!!! Missing flandersqmd.cover-description !!!</h1>'
+        z = z .. '<h1 class="missing">!!! Missing flandersqmd.coverdescription !!!</h1>'
       else
         y = pandoc.utils.stringify(meta.flandersqmd.coverdescription)
         z = z .. '<div class="quarto-title-meta-contents">' .. y .. '</div>'
