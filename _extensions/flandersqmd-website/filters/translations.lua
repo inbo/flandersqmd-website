@@ -215,7 +215,7 @@ function watermark(lang, flandersqmd)
   if not is_empty(flandersqmd.watermark) then
     result = pandoc.utils.stringify(flandersqmd.watermark)
   end
-  if not (is_empty(flandersqmd.title) or is_empty(flandersqmd.author) or is_empty(flandersqmd.year) or is_empty(flandersqmd.reviewer) or is_empty(flandersqmd.reportnr)) and ((not (is_empty(flandersqmd.doi) or is_empty(flandersqmd.depotnr)))) then
+  if not (is_empty(flandersqmd.title) or is_empty(flandersqmd.author) or is_empty(flandersqmd.year) or is_empty(flandersqmd.reviewer) or is_empty(flandersqmd.reportnr)) and (not flandersqmd.public_report or (not (is_empty(flandersqmd.doi) or is_empty(flandersqmd.depotnr)))) then
     return result
   end
   if (lang == "nl-BE") then
@@ -241,7 +241,7 @@ return {
           pandoc.utils.stringify(meta.flandersqmd.entity)
         )
       end
-      if is_empty(meta.flandersqmd.level) or tonumber(pandoc.utils.stringify(meta.flandersqmd.level)) < 2 then
+      if pandoc.utils.stringify(meta.lang) ~= 'nl-BE' or is_empty(meta.flandersqmd.level) or tonumber(pandoc.utils.stringify(meta.flandersqmd.level)) < 2 then
         meta.entitycolours = 'flanders'
       else
         meta.titlelogo = meta.translation.titlelogo
@@ -265,8 +265,14 @@ return {
             meta.displaycolophon = 0
           end
         end
+        if is_empty(meta.flandersqmd.public_report) or meta.flandersqmd.public_report then
+          meta.public = 1
+        else
+          meta.public = 0
+        end
       else
         meta.displaycolophon = 1
+        meta.public = 1
       end
       return meta
     end
