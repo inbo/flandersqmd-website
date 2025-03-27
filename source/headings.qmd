@@ -1,6 +1,6 @@
 ```{r}
 #| label: setup
-library(lipsum) 
+library(lipsum)
 set.seed(20200818)
 header <- function(words = 4, format = FALSE) {
   sprintf(
