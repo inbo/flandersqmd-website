@@ -101,17 +101,16 @@ return {
     end
 
 --[[initialise]]
-    if is_empty(meta.flandersqmd.cover) then
-      z = ''
-    else
+    z = '<div id="title-block-header" class="quarto-title-block default">'
+
+--[[add cover]]
+    z = z .. '<div class="quarto-title">'
+    if not is_empty(meta.flandersqmd.cover) then
       y = pandoc.utils.stringify(meta.flandersqmd.cover)
       y = y:match("(.+)%..*")
-      z = '<img src="' .. y .. '.png">'
+      z = z .. '<img src="' .. y .. '.png">'
     end
-    z = z .. '<div id="title-block-header" class="quarto-title-block default">'
-
 --[[add title]]
-    z = z .. '<div class="quarto-title">'
     if is_empty(meta.flandersqmd.title) then
       z = z .. '<h1 class = "missing">!!! Missing flandersqmd.title !!!</h1>'
     else
