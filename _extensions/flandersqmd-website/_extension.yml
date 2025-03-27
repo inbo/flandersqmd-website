@@ -6,6 +6,7 @@ contributes:
   project:
     project:
       type: website
+      lib-dir: libs
   format:
     common:
       knitr:
