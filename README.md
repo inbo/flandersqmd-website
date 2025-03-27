@@ -233,7 +233,7 @@ And a `DRAFT` watermark will appear on every page.
 
 ## Render your quarto report
 
-You can render your quarto report in two main ways:  
+You can render your quarto report in two main ways:
 
 1. **Using RStudio's Build Pane**  
    - Open your quarto book project in RStudio.
