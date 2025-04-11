@@ -8,7 +8,7 @@ contributes:
       type: website
       lib-dir: libs
   format:
-    common:
+    html:
       knitr:
         opts_chunk:
           echo: false
@@ -16,11 +16,11 @@ contributes:
       csl: research-institute-for-nature-and-forest.csl
       number-sections: false
       toc: true
+      anchor-sections: true
       html-math-method: katex
       shortcodes:
         - shortcodes/colophon.lua
         - shortcodes/footer.lua
-    html:
       css: [css/flanders_generic.css]
       template-partials:
         - "partials/metadata.html"
