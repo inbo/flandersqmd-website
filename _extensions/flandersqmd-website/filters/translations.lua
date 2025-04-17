@@ -184,6 +184,7 @@ function levelcss (entity)
     css = css .. '  --link-color: #0055CC;'
     css = css .. '  --missing-color: #FF0000;'
   end
+  css = css .. '  --bs-body-font-weight: 300;'
   css = css .. '  --callout-tip-color: #729BB7;'
   css = css .. '  --callout-tip-background: #729BB744;'
   css = css .. '  --callout-caution-color: #EF972C;'
