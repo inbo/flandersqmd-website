@@ -16,7 +16,7 @@ contact:
   affiliation: Research Institute for Nature and Forest (INBO)
   orcid: 0000-0001-8804-4216
 doi: ~
-license: CC-BY-4.0
+license: CC BY 4.0
 repository-code: https://github.com/inbo/flandersqmd-website/
 type: software
 abstract: "This quarto extension builds on the quarto [website format](https://quarto.org/docs/websites/)
