@@ -189,6 +189,7 @@ h1 {
   line-height: 51px;
   text-transform: uppercase;
   margin-bottom: 15px;
+  font-weight: 300;
 }
 
 h2 {
@@ -196,18 +197,22 @@ h2 {
   font-family: "flanders-art-sansregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 28px;
   line-height: 34px;
+  font-weight: 300;
 }
 h3 {
   color: var(--heading-color) !important;
   font-family: "flanders-art-sansregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 21px;
   line-height: 27px;
+  font-weight: 300;
 }
 h4, h5, h6 {
   color: var(--heading-color) !important;
+  font-weight: 300;
 }
 h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
   color: var(--heading-color) !important;;
+  font-weight: 300;
 }
 
 p {
