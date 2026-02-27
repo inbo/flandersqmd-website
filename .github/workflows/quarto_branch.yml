@@ -1,31 +1,19 @@
 on:
   push:
     branches-ignore:
-      - main
       - gh-pages
+      - main
 
-name: quarto-build
+name: quarto
 
 jobs:
-  quarto-build:
+  check-src:
     runs-on: ubuntu-latest
-    name: "Build example"
+    name: "Build document"
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      INPUT_FOLDER: "source"
     permissions:
       contents: read
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-      - name: Setup Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-      - name: Setup R
-        uses: r-lib/actions/setup-r@v2
-      - name: Install required R packages
-        run: |
-          Rscript -e 'install.packages(c("ggplot2", "INBOtheme", "knitr", "lipsum", "rmarkdown"), repos = c("https://inbo.r-universe.dev", "https://cloud.r-project.org"))'
-      - name: Render Quarto Project
-        uses: quarto-dev/quarto-actions/render@v2
-        with:
-          to: all
-          path: source
+      - uses: inbo/actions/render_quarto@devel
