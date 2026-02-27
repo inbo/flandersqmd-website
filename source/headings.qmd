@@ -1,0 +1,64 @@
+```{r}
+#| label: setup
+library(lipsum)
+set.seed(20200818)
+header <- function(words = 4, format = FALSE) {
+  sprintf(
+    ifelse(
+      format,
+      "%s '%s' `%s` _%s_",
+      "%s %s %s %s"
+    ),
+    lipsum::sentence(words = words),
+    lipsum::sentence(words = words),
+    lipsum::sentence(words = words),
+    lipsum::sentence(words = words)
+  )
+}
+```
+
+---
+title: "Headings: level 1: `r header(4)`"
+---
+
+`r paragraph(n = 3)`
+
+## Level 2: `r header(4)`
+
+`r paragraph(n = 3)`
+
+### Level 3: `r header(4)` {#sec-heading-3}
+
+`r paragraph(n = 3)`
+
+#### Level 4: `r header(5)` {#sec-heading-4}
+
+`r paragraph(n = 3)`
+
+##### Level 5: `r header(4)` {#sec-heading-5}
+
+`r paragraph(n = 3)`
+
+###### Level 6: `r header(4)` {#sec-heading-6}
+
+`r paragraph(n = 3)`
+
+## Headings with formatting: level 2: `r header(4, TRUE)`
+
+`r paragraph(n = 3)`
+
+### Level 3: `r header(4, TRUE)`
+
+`r paragraph(n = 3)`
+
+#### Level 4: `r header(5, TRUE)`
+
+`r paragraph(n = 3)`
+
+##### Level 5: `r header(4, TRUE)`
+
+`r paragraph(n = 3)`
+
+###### Level 6: `r header(4, TRUE)`
+
+`r paragraph(n = 3)`
