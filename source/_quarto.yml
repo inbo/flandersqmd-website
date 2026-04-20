@@ -95,6 +95,10 @@ flandersqmd:
   cooperationlogo: media/logo.jpg
 
 website:
+  page-footer:
+    left: '{{< authors >}}'
+    center: '{{< inbo_info >}}'
+    right: '{{< reference >}}'
   navbar:
     left:
       - text: Cover
