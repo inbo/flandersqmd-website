@@ -19,8 +19,11 @@ contributes:
       anchor-sections: true
       html-math-method: katex
       shortcodes:
+        - shortcodes/authors.lua
         - shortcodes/colophon.lua
         - shortcodes/footer.lua
+        - shortcodes/inbo_info.lua
+        - shortcodes/reference.lua
       css: [css/flanders_generic.css]
       template-partials:
         - "partials/metadata.html"

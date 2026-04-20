@@ -51,6 +51,9 @@ a:hover{
 #title-block-header a:hover {
   text-decoration: underline;
 }
+.nav-footer a{
+  color: var(--link-color);
+}
 .colophon-button{
   color: var(--link-color);
   border-width: 0;
