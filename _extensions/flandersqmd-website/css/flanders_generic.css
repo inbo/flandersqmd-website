@@ -54,6 +54,11 @@ a:hover{
 .nav-footer a{
   color: var(--link-color);
 }
+.quarto-title-meta-heading {
+  text-transform: uppercase;
+  opacity: .8;
+  font-weight: 400;
+}
 .colophon-button{
   color: var(--link-color);
   border-width: 0;
