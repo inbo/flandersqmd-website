@@ -139,17 +139,6 @@ return {
     end
 
     z = z .. '</div>'
-    if not is_empty(meta.flandersqmd.cover) then
-      z = z .. '<div>' .. '<div class="quarto-title-meta-heading">' ..
-        meta.translation.coverdescription .. '</div>'
-      if is_empty(meta.flandersqmd.coverdescription) then
-        z = z .. '<h1 class="missing">!!! Missing flandersqmd.cover-description !!!</h1>'
-      else
-        y = pandoc.utils.stringify(meta.flandersqmd.coverdescription)
-        z = z .. '<div class="quarto-title-meta-contents">' .. y .. '</div>'
-      end
-      z = z .. '</div>'
-    end
     if not is_empty(meta.flandersqmd.client) then
       z = z .. '<div>' .. '<div class="quarto-title-meta-heading">' ..
         meta.translation.client .. '</div>' ..
