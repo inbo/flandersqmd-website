@@ -122,14 +122,14 @@ return {
     z = z .. '</div>'
 
     z = z .. '<div>' .. meta.translation.export ..
-      '<button onclick="display_export(\'bibtex\')" class="colophon-button">BibTex</button>' ..
-      '<button onclick="display_export(\'RIS\')" class="colophon-button">RIS</button>' ..
-      '<button onclick="display_export(\'csl\')" class="colophon-button">CSL-JSON</button>' ..
+      '<button onclick="display_export(\'bibtexf\')" class="colophon-button">BibTex</button>' ..
+      '<button onclick="display_export(\'RISf\')" class="colophon-button">RIS</button>' ..
+      '<button onclick="display_export(\'cslf\')" class="colophon-button">CSL-JSON</button>' ..
       '<script>' .. 'function display_export(id) {' ..
       'var x = document.getElementById(id);' ..
       'if (x.style.display === "none") {' .. 'x.style.display = "block";' ..
       '} else {' .. 'x.style.display = "none";' .. '}' .. '}' .. '</script>'
-    z = z .. '<pre id = "bibtex" style ="display: none;">\n' .. '@online{\n'
+    z = z .. '<pre id = "bibtexf" style ="display: none;">\n' .. '@online{\n'
       if is_empty(meta.flandersqmd.author) then
         z = z .. '<h1 class = "missing">!!! Missing flandersqmd.author !!!</h1>'
       else
@@ -172,7 +172,7 @@ return {
         z = z .. '  url = {' .. pandoc.utils.stringify(meta.flandersqmd.url) ..  '},\n'
       end
       z = z .. '  type = {online}\n' .. '}' .. '</pre>\n'
-      z = z .. '<pre id = "RIS" style ="display: none;">\n' .. 'TY  - WEB\n'
+      z = z .. '<pre id = "RISf" style ="display: none;">\n' .. 'TY  - WEB\n'
       if is_empty(meta.flandersqmd.author) then
         z = z .. '<h1 class = "missing">!!! Missing flandersqmd.author !!!</h1>'
       else
@@ -209,7 +209,7 @@ return {
       end
       z = z .. 'ER  -\n' .. '</pre>'
 
-      z = z .. '<pre id = "csl" style ="display: none;">\n' .. '{\n' ..
+      z = z .. '<pre id = "cslf" style ="display: none;">\n' .. '{\n' ..
         '  "type":"report",\n'
       if not is_empty(meta.translation.title) then
         z = z .. '  "title":"' .. meta.translation.title .. '.'
