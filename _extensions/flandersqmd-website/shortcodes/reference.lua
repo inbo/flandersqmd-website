@@ -56,7 +56,7 @@ return {
           res = res .. '      "family":"' .. pandoc.utils.stringify(person.name.family) .. '",\n'
         end
         if not is_empty(person.name.given) then
-          res = res .. '      "given":"' .. pandoc.utils.stringify(person.name.given) .. '"\n    }\n'
+          res = res .. '      "given":"' .. pandoc.utils.stringify(person.name.given) .. '"\n    },\n'
         end
       end
       return res
@@ -105,13 +105,6 @@ return {
       end
     end
     if not is_empty(meta.translation.name) then
-      if not is_empty(meta.translation.website) then
-        if tonumber(pandoc.utils.stringify(meta.public)) > 0 then
-          z = z .. meta.translation.website .. ' '
-        else
-          z = z .. meta.translation.website .. ' '
-        end
-      end
       z = z .. meta.translation.name .. ' '
     end
     if is_empty(meta.flandersqmd.url) then
@@ -137,12 +130,12 @@ return {
         for i, person in pairs(meta.flandersqmd.author) do
           z = z .. bibtex_person(person, i, 'author')
         end
-        z = z .. '}\n'
+        z = z .. '},\n'
       end
-      if not is_empty(meta.translation.title) then
-        z = z .. '  title = {' .. meta.translation.title .. '.'
-        if not is_empty(meta.translation.substitle) then
-          z = z .. '  ' .. meta.translation.subtitle .. '.},\n'
+      if not is_empty(meta.flandersqmd.title) then
+        z = z .. '  title = {' .. pandoc.utils.stringify(meta.flandersqmd.title) .. '.'
+        if not is_empty(meta.flandersqmd.subtitle) then
+          z = z .. '  ' .. pandoc.utils.stringify(meta.flandersqmd.subtitle) .. '.'
         end
         z = z .. '},\n'
       end
@@ -150,7 +143,7 @@ return {
         z = z .. '  institution = {' .. meta.translation.name .. '},\n'
       end
       if not is_empty(meta.translation.address) then
-        z = z .. '  address = {' .. meta.translation.address .. '},\n'
+        z = z .. '  address = {' .. meta.translation.city .. '},\n'
       end
       if is_empty(meta.flandersqmd.year) then
         z = z .. '<h1 class = "missing">!!! Missing flandersqmd.year !!!</h1>'
@@ -169,9 +162,9 @@ return {
       if is_empty(meta.flandersqmd.url) then
         z = z .. '<h1 class = "missing">!!! Missing flandersqmd.url !!!</h1>'
       else
-        z = z .. '  url = {' .. pandoc.utils.stringify(meta.flandersqmd.url) ..  '},\n'
+        z = z .. '  url = {' .. pandoc.utils.stringify(meta.flandersqmd.url) ..  '}\n'
       end
-      z = z .. '  type = {online}\n' .. '}' .. '</pre>\n'
+      z = z  .. '}' .. '</pre>\n'
       z = z .. '<pre id = "RISf" style ="display: none;">\n' .. 'TY  - WEB\n'
       if is_empty(meta.flandersqmd.author) then
         z = z .. '<h1 class = "missing">!!! Missing flandersqmd.author !!!</h1>'
@@ -180,12 +173,12 @@ return {
           z = z .. ris_person(person, i, 'author')
         end
       end
-      if not is_empty(meta.translation.title) then
-        z = z .. 'TI  - ' .. meta.translation.title .. '.'
-        if not is_empty(meta.translation.substitle) then
-          z = z .. '  ' .. meta.translation.subtitle .. '.\n'
+      if not is_empty(meta.flandersqmd.title) then
+        z = z .. 'TI  - ' .. pandoc.utils.stringify(meta.flandersqmd.title) .. '.'
+        if not is_empty(meta.flandersqmd.subtitle) then
+          z = z .. '  ' .. pandoc.utils.stringify(meta.flandersqmd.subtitle) .. '.'
         end
-        z = z .. '},\n'
+        z = z .. '\n'
       end
       if tonumber(pandoc.utils.stringify(meta.public)) > 0 and not is_empty(meta.flandersqmd.doi) then
         local x = pandoc.utils.stringify(meta.flandersqmd.doi)
@@ -195,7 +188,7 @@ return {
         z = z .. 'PB  - ' .. meta.translation.name .. '\n'
       end
       if not is_empty(meta.translation.address) then
-        z = z .. 'PP  - ' .. meta.translation.address .. '\n'
+        z = z .. 'CY  - ' .. meta.translation.city .. '\n'
       end
       if not is_empty(meta.flandersqmd.year) then
         local x = pandoc.utils.stringify(meta.flandersqmd.year)
@@ -210,30 +203,37 @@ return {
       z = z .. 'ER  -\n' .. '</pre>'
 
       z = z .. '<pre id = "cslf" style ="display: none;">\n' .. '{\n' ..
-        '  "type":"report",\n'
-      if not is_empty(meta.translation.title) then
-        z = z .. '  "title":"' .. meta.translation.title .. '.'
-        if not is_empty(meta.translation.substitle) then
-          z = z .. '  ' .. meta.translation.subtitle .. '.\n'
+        '  "type":"webpage",\n'
+      if not is_empty(meta.flandersqmd.title) then
+        z = z .. '  "title":"' .. pandoc.utils.stringify(meta.flandersqmd.title) .. '.'
+        if not is_empty(meta.flandersqmd.subtitle) then
+          z = z .. '  ' .. pandoc.utils.stringify(meta.flandersqmd.subtitle) .. '.'
         end
-        z = z .. '"",\n'
+        z = z .. '",\n'
       end
       if not is_empty(meta.flandersqmd.author) then
         z = z .. '  "author":[\n'
         for i, person in pairs(meta.flandersqmd.author) do
           z = z .. json_person(person, i, 'author')
         end
-        z = z .. '  ]\n'
+        z = z:sub(1, -3) .. '\n  ],\n'
+      end
+      if tonumber(pandoc.utils.stringify(meta.public)) > 0 and not is_empty(meta.flandersqmd.doi) then
+        local x = pandoc.utils.stringify(meta.flandersqmd.doi)
+        z = z .. '  "DOI":"' .. x .. '",\n'
+      end
+      if not is_empty(meta.flandersqmd.url) then
+        z = z .. '"URL":"' .. pandoc.utils.stringify(meta.flandersqmd.url) ..  '",\n'
       end
       if not is_empty(meta.flandersqmd.year) then
         y = pandoc.utils.stringify(meta.flandersqmd.year)
         z = z .. '  "issued":{"date-parts":[[' .. y .. ']]},\n'
       end
       if not is_empty(meta.translation.name) then
-        z = z .. '  "publisher":" "' .. meta.translation.name .. '",\n'
+        z = z .. '  "publisher": "' .. meta.translation.name .. '",\n'
       end
       if not is_empty(meta.translation.address) then
-        z = z .. '  "publisher-place":"' .. meta.translation.address .. '",\n'
+        z = z .. '  "publisher-place":"' .. meta.translation.city .. '"\n'
       end
       z = z .. '}\n' .. '</pre>'
     end

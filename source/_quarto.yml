@@ -76,6 +76,7 @@ flandersqmd:
   ordernr: optional order number
   depotnr: optional depot number
   doi: 10.5281/zenodo.18714430
+  url: https://inbo.github.io/flandersqmd-website/
   watermark: This is a watermark
   public_report: true
   colophon: true
