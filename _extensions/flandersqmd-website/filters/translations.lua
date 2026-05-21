@@ -14,6 +14,8 @@ function translation_entity(result, lang, entity)
       result.tagline = "vlaanderen-wetenschap.pdf"
       result.url = "https://www.vlaanderen.be/inbo"
       result.url_text = "vlaanderen.be/inbo"
+      result.logo = "inbo-logo-nl.svg"
+      result.logo_text = "logo van het "
     elseif (lang == "fr-FR") then
       result.address = "INBO Bruxelles, Herman Teirlinckgebouw, Avenu du Port 88 boîte 73, 1000 Bruxelles"
       result.city = "Bruxelles"
@@ -23,6 +25,8 @@ function translation_entity(result, lang, entity)
       result.tagline = "flanders-state-art.pdf"
       result.url = "https://www.vlaanderen.be/inbo/en-gb/homepage/"
       result.url_text = "vlaanderen.be/inbo"
+      result.logo = "inbo-logo-en.svg"
+      result.logo_text = "logo de "
     else
       result.address = "INBO Brussels, Herman Teirlinckgebouw, Havenlaan 88 bus 73, 1000 Brussels"
       result.city = "Brussels"
@@ -32,6 +36,8 @@ function translation_entity(result, lang, entity)
       result.tagline = "flanders-state-art.pdf"
       result.url = "https://www.vlaanderen.be/inbo/en-gb/homepage/"
       result.url_text = "vlaanderen.be/inbo"
+      result.logo = "inbo-logo-en.svg"
+      result.logo_text = "logo of the "
     end
     result.email = "info@inbo.be"
     result.issn_nr = "1782-9054"
