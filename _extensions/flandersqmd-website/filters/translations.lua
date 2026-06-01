@@ -8,27 +8,36 @@ function translation_entity(result, lang, entity)
     if (lang == "nl-BE") then
       result.address = "INBO Brussel, Herman Teirlinckgebouw, Havenlaan 88 bus 73, 1000 Brussel"
       result.city = "Brussel"
+      result.institute_title = "Over INBO"
       result.mission = "Het INBO is het onafhankelijk onderzoeksinstituut van de Vlaamse overheid dat via toegepast wetenschappelijk onderzoek, data- en kennisontsluiting het biodiversiteitsbeleid en -beheer onderbouwt en evalueert."
       result.name = "Instituut voor Natuur- en Bosonderzoek"
       result.tagline = "vlaanderen-wetenschap.pdf"
       result.url = "https://www.vlaanderen.be/inbo"
       result.url_text = "vlaanderen.be/inbo"
+      result.logo = "inbo-logo-nl.svg"
+      result.logo_text = "logo van het "
     elseif (lang == "fr-FR") then
       result.address = "INBO Bruxelles, Herman Teirlinckgebouw, Avenu du Port 88 boîte 73, 1000 Bruxelles"
       result.city = "Bruxelles"
+      result.institute_title = "INBO"
       result.mission = "l'Institut de Recherche sur la Nature et les Forêts ('Instituut voor Natuur- en Bosonderzoek', INBO) est un institut de recherche indépendant du gouvernement flamand, qui étaye et évalue la politique et la gestion en matière de biodiversité par la recherche scientifique appliquée, l'intégration et la dissémination publique de données et de connaissances."
       result.name = "l'Institut de Recherche sur la Nature et les Forêts"
       result.tagline = "flanders-state-art.pdf"
       result.url = "https://www.vlaanderen.be/inbo/en-gb/homepage/"
       result.url_text = "vlaanderen.be/inbo"
+      result.logo = "inbo-logo-en.svg"
+      result.logo_text = "logo de "
     else
       result.address = "INBO Brussels, Herman Teirlinckgebouw, Havenlaan 88 bus 73, 1000 Brussels"
       result.city = "Brussels"
+      result.institute_title = "About INBO"
       result.mission = "The Research Institute for Nature and Forest (INBO) is an independent research institute of the Flemish government. Through applied scientific research, open data and knowledge, integration and disclosure, it underpins and evaluates biodiversity policy and management."
-      result.name = "Research Instute for Nature and Forest"
+      result.name = "Research Institute for Nature and Forest"
       result.tagline = "flanders-state-art.pdf"
       result.url = "https://www.vlaanderen.be/inbo/en-gb/homepage/"
       result.url_text = "vlaanderen.be/inbo"
+      result.logo = "inbo-logo-en.svg"
+      result.logo_text = "logo of the "
     end
     result.email = "info@inbo.be"
     result.issn_nr = "1782-9054"
@@ -68,6 +77,7 @@ function translation(lang, entity)
       reviewer = "Nagelezen door",
       reviewer_pdf = "Reviewers",
       series = "Rapporten van het",
+      website = "Website van het",
       vu = "Verantwoordelijke uitgever",
       year = "Gepubliceerd in"
     }
@@ -90,6 +100,7 @@ function translation(lang, entity)
       reviewer = "Examiné par",
       reviewer_pdf = "Reviewers",
       series = "Rapports de",
+      website = "Website de",
       vu = "Éditeur responsable",
       year = "Publié en"
     }
@@ -112,6 +123,7 @@ function translation(lang, entity)
       reviewer = "Reviewed by",
       reviewer_pdf = "Reviewers",
       series = "Reports of the",
+      website = "Website of the",
       vu = "Responsible publisher",
       year = "Published during"
     }
