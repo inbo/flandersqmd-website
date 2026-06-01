@@ -56,7 +56,7 @@ return {
 
 --[[add logo]]
     z = z .. '<a href="' .. meta.translation.url .. '">' ..
-      '<img src="_extensions/flandersqmd-website/img/' ..
+      '<img src="_extensions/inbo/flandersqmd-website/img/' ..
       meta.translation.logo .. '" height=24 alt="' ..
       meta.translation.logo_text .. meta.translation.name .. ' (INBO)"></a>'
 
