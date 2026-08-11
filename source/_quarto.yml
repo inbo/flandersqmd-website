@@ -115,8 +115,10 @@ website:
       - text: Appendices
         file: appendix-first.qmd
     tools:
-      - icon: mastodon
-        href: https://mastodon.online/@inbo
+      - icon: linkedin
+        href: https://www.linkedin.com/company/inbo-research-institute-for-nature-and-forest/
+      - icon: bluesky
+        href: https://bsky.app/profile/inbo.be
       - icon: facebook
         href: https://www.facebook.com/INBOVlaanderen/
       - icon: github
