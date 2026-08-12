@@ -51,8 +51,24 @@ a:hover{
 #title-block-header a:hover {
   text-decoration: underline;
 }
+.nav-footer{
+  background-color: var(--navbar-background) !important;
+  color: var(--navbar-text-color) !important;
+}
+.nav-footer a{
+  color: var(--link-footer);
+}
+.logo{
+  background-color: #ffffff;
+}
+.quarto-title-meta-heading {
+  text-transform: uppercase;
+  opacity: .8;
+  font-weight: 400;
+}
 .colophon-button{
-  color: var(--link-color);
+  background-color: transparent;
+  color: var(--link-footer);
   border-width: 0;
 }
 .colophon-button:hover{

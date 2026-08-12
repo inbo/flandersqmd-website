@@ -75,7 +75,8 @@ flandersqmd:
   coverdescription: Detail of a leaf. Photo by [Skyler Ewing](https://www.pexels.com/nl-nl/@skyler-ewing-266953?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels) via [Pexels](https://www.pexels.com/nl-nl/foto/hout-natuur-rood-creatief-4599227/?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels)
   ordernr: optional order number
   depotnr: optional depot number
-  doi: 10.5281/zenodo.842223
+  doi: 10.5281/zenodo.18714430
+  url: https://inbo.github.io/flandersqmd-website/
   watermark: This is a watermark
   public_report: true
   colophon: true
@@ -95,6 +96,10 @@ flandersqmd:
   cooperationlogo: media/logo.jpg
 
 website:
+  page-footer:
+    left: '{{< authors >}}'
+    center: '{{< inbo_info >}}'
+    right: '{{< reference >}}'
   navbar:
     left:
       - text: Cover
@@ -110,8 +115,10 @@ website:
       - text: Appendices
         file: appendix-first.qmd
     tools:
-      - icon: mastodon
-        href: https://mastodon.online/@inbo
+      - icon: linkedin
+        href: https://www.linkedin.com/company/inbo-research-institute-for-nature-and-forest/
+      - icon: bluesky
+        href: https://bsky.app/profile/inbo.be
       - icon: facebook
         href: https://www.facebook.com/INBOVlaanderen/
       - icon: github
