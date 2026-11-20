@@ -155,6 +155,7 @@ website:
         - equations.md
         - citations.md
         - language.md
+        - html.md
     - section: Code generated content
       contents:
         - code.qmd
